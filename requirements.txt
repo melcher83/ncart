@@ -1,0 +1,6 @@
+Django==1.11.13
+pyasn1==0.4.3
+pyasn1-modules==0.2.2
+PyPDF2==1.26.0
+pytz==2018.4
+XlsxWriter==1.0.5
