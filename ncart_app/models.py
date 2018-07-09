@@ -14,6 +14,7 @@ class Project(models.Model):
     zip = models.CharField(verbose_name='Zip Code', max_length=5)
     date = models.DateField(verbose_name='Date Performed')
     contact = models.CharField(verbose_name='Contact', max_length=100)
+    email = models.EmailField(verbose_name='Email')
 
     def __unicode__(self):
         return self.Client
@@ -39,6 +40,11 @@ class Port(models.Model):
 
     def __unicode__(self):
         return self.number
+
+
+
+
+
 
 
 
