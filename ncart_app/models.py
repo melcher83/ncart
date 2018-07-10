@@ -42,6 +42,11 @@ class Port(models.Model):
     def __unicode__(self):
         return self.number
 
+class picture(models.Model):
+    title = models.CharField(verbose_name='Title', max_length=50)
+    file = models.FileField()
+
+
 
 
 
