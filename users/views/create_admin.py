@@ -14,7 +14,7 @@ def page(request):
       form.save()
       # In this line, we register the new user in the database.
 
-      return HttpResponseRedirect(reverse('public_empty'))
+      return HttpResponseRedirect(reverse('create_user'))
     else:
       return render(request, 'create_admin.html', {'form' : form})
   else:
@@ -23,6 +23,9 @@ def page(request):
     form = Form_admin()
     return render(request, 'create_admin.html', {'form' : form})
 class Form_admin(forms.ModelForm):
+
+  user_auth = forms.CharField(label='User Auth', max_length=30, help_text='Try to make this Unique',widget=forms.HiddenInput())
+  username = forms.CharField(label='Username', max_length=30, help_text='Try to make this Unique')
 
   class Meta:
       # We extend the Meta class of the ModelForm. It is this class that will allow us to define the properties of ModelForm.
