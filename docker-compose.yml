@@ -12,7 +12,7 @@ services:
       - web
   web:
     build: .
-    container_name: 3cx-web
+    container_name: ncart-web
     command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn Work_manager.wsgi -b 0.0.0.0:8000"
     depends_on:
       - db
