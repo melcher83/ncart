@@ -7,8 +7,12 @@ variables:
 IDK:
   stage: deploy
 
+  tags:
+    - test
+
+
   environment:
-    name: Prod
+    name: Test
     url:
 
   script:
@@ -18,5 +22,3 @@ IDK:
 
 
 
-  only:
-    - master
