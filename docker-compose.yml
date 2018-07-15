@@ -2,11 +2,11 @@ version: '2'
 services:
   nginx:
     image: nginx:latest
-    container_name: 3cx-ng01
+    container_name: ncart-ng01
     ports:
       - "80:80"
     volumes:
-      - ./src:/src
+      - ./:/src
       - ./config/nginx:/etc/nginx/conf.d
     depends_on:
       - web
@@ -23,4 +23,4 @@ services:
 
   db:
     image: postgres:latest
-    container_name: 3cx-ps01
+    container_name: ncart-ps01
