@@ -12,11 +12,13 @@ services:
   web:
     build: .
     container_name: ncart-web
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn ncart.wsgi -b 0.0.0.0:8000"
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn wsgi -b 0.0.0.0:8000"
     depends_on:
       - db
     volumes:
-      - ./ncart:/src
+      - ./ncart:/src/ncart
+      - ./ncart_app:/src/ncart_app
+      - ./users:/src/users
     expose:
       - "8000"
 
