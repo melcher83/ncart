@@ -17,7 +17,9 @@ services:
     depends_on:
       - db
     volumes:
-      - .:/src
+      - ./ncart:/src
+      - ./ncart_app:/src
+      - ./users:/src
     expose:
       - "8000"
 
