@@ -17,10 +17,10 @@ services:
     depends_on:
       - db
     volumes:
-      - ncart:/src
+      - ./ncart:/src
     expose:
       - "8000"
 
   db:
     image: postgres:latest
-    container_name: ncart-ps01k
+    container_name: ncart-ps01
