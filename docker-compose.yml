@@ -6,7 +6,6 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./:/src
       - ./config/nginx:/etc/nginx/conf.d
     depends_on:
       - web
