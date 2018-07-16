@@ -17,7 +17,7 @@ services:
     depends_on:
       - db
     volumes:
-      - ./:/src
+      - .:/src
     expose:
       - "8000"
 
