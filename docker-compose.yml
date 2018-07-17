@@ -15,16 +15,9 @@ services:
     command: bash -c "python ncart/manage.py makemigrations && python ncart/manage.py migrate && gunicorn ncart.wsgi -b 0.0.0.0:8000"
     depends_on:
       - db
-
     volumes:
-      - type: volume
-        source: ncart
-        target: /data
-        volume:
-          nocopy: true
-      - type: bind
-        source: ./static
-        target: /opt/app/static
+      - ./ncart:/src
+
 
     expose:
       - "8000"
