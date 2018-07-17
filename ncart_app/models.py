@@ -11,8 +11,9 @@ class Project(models.Model):
     streetaddress = models.CharField(verbose_name='Street Address', max_length=300)
     city = models.CharField(verbose_name='City', max_length=30)
     state = models.CharField(verbose_name='State', max_length=30)
+    date_start = models.DateField(verbose_name='Date Performed')
     zip = models.CharField(verbose_name='Zip Code', max_length=5)
-    date = models.DateField(verbose_name='Date Performed')
+    date_end = models.DateField(verbose_name='Date Ended')
     contact = models.CharField(verbose_name='Contact', max_length=100)
     email = models.EmailField(verbose_name='Email',null=True, default=None)
 
@@ -32,7 +33,7 @@ class Firewall(models.Model):
         return self.name
 
 class Port(models.Model):
-    number = models.CharField(verbose_name='Port Number', max_length=10)
+    number = models.CharField(verbose_name='Port Number', max_length=100)
     transport = models.CharField(verbose_name='TCP/UDP', max_length=4)
     source = models.CharField(verbose_name='Source', max_length=12)
     destination = models.CharField(verbose_name='Destination', max_length=12)
@@ -52,6 +53,7 @@ class Picture(models.Model):
 
 class Network_map(models.Model):
     title = models.CharField(verbose_name='Title', max_length=50)
+    type = models.CharField(verbose_name='Type', max_length=20)
     file = models.FileField()
     project = models.ForeignKey(Project, verbose_name="Project", null=True, default=None, blank=True)
 
