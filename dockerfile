@@ -9,9 +9,7 @@ ADD requirements.txt /config
 RUN pip install -r /config/requirements.txt
 
 RUN mkdir /src
-RUN mkdir /src/ncart
-RUN mkdir /src/ncart_app
-RUN mkdir /src/users
+
 
 WORKDIR /src
 
