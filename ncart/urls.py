@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 import users.views.create_admin
+import ncart_app.views.index
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url (r'^add-user$', users.views.create_admin.page),,
     url (r'^add-user$',users.views.create_admin.page, name='create_user'),
-    url (r'^index$', views.index.page, name='index')
+    url (r'^index$', ncart_app.views.index.page, name='index')
 
 ]
