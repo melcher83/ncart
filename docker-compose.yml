@@ -18,8 +18,8 @@ services:
 
     volumes:
       - type: volume
-        source: ncart
-        target: /src
+      - source: ncart
+      - target: /src
 
 
     expose:
