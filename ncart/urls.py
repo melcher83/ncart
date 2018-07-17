@@ -19,7 +19,8 @@ import users.views.create_admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url (r'^add-user$', users.views.create_admin.page),
+    url (r'^add-user$', users.views.create_admin.page),,
     url (r'^add-user$',users.views.create_admin.page, name='create_user'),
+    url (r'^index$', views.index.page, name='index')
 
 ]
