@@ -2,7 +2,7 @@ version: '2'
 services:
   nginx:
     image: nginx:latest
-    container_name: ncart-ng01
+    container_name: ncart_work-ng01
     ports:
       - "80:80"
     volumes:
@@ -11,16 +11,16 @@ services:
       - web
   web:
     build: .
-    container_name: ncart-web
-    command: bash -c "python ncart/manage.py makemigrations && python ncart/manage.py migrate && gunicorn ncart.wsgi -b 0.0.0.0:8000"
+    container_name: ncart_work-web
+    command: bash -c "python ncart_work/manage.py makemigrations && python ncart_work/manage.py migrate && gunicorn ncart_work.wsgi -b 0.0.0.0:8000"
     depends_on:
       - db
     volumes:
-      - ./ncart:/src
+      - ./ncart_work:/src
 
     expose:
       - "8000"
 
   db:
     image: postgres:latest
-    container_name: ncart-ps01
+    container_name: ncart_work-ps01
