@@ -20,7 +20,7 @@ import ncart_app.views.index
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url (r'^add-user$', users.views.create_admin.page),,
+    url (r'^add-user$', users.views.create_admin.page),
     url (r'^add-user$',users.views.create_admin.page, name='create_user'),
     url (r'^index$', ncart_app.views.index.page, name='index')
 
