@@ -18,9 +18,13 @@ services:
 
     volumes:
       - type: volume
-      - source: ncart
-      - target: /src
-
+        source: ncart
+        target: /data
+        volume:
+          nocopy: true
+      - type: bind
+        source: ./static
+        target: /opt/app/static
 
     expose:
       - "8000"
