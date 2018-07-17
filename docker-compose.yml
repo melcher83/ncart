@@ -17,8 +17,6 @@ services:
       - db
     volumes:
       - ./:/src
-
-
     expose:
       - "8000"
 
