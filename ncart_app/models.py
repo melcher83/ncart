@@ -37,7 +37,7 @@ class Port(models.Model):
     source = models.CharField(verbose_name='Source', max_length=12)
     destination = models.CharField(verbose_name='Destination', max_length=12)
     description = models.CharField(verbose_name='Description', max_length=500)
-    firewall = models.ForeignKey(Project, verbose_name="Firewall Name", null=True, default=None, blank=True)
+    firewall = models.ForeignKey(Project, verbose_name="Firewall", null=True, default=None, blank=True)
 
     def __unicode__(self):
         return self.number
@@ -45,6 +45,18 @@ class Port(models.Model):
 class Picture(models.Model):
     title = models.CharField(verbose_name='Title', max_length=50)
     file = models.FileField()
+    firewall = models.ForeignKey(Project, verbose_name="Firewall", null=True, default=None, blank=True)
+
+    def __unicode__(self):
+        return self.title
+
+class Network_map(models.Model):
+    title = models.CharField(verbose_name='Title', max_length=50)
+    file = models.FileField()
+    project = models.ForeignKey(Project, verbose_name="Project", null=True, default=None, blank=True)
+
+    def __unicode__(self):
+        return self.title
 
 
 
