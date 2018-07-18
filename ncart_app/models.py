@@ -11,7 +11,7 @@ class Project(models.Model):
     streetaddress = models.CharField(verbose_name='Street Address', max_length=300)
     city = models.CharField(verbose_name='City', max_length=30)
     state = models.CharField(verbose_name='State', max_length=30)
-    date_start = models.DateField(verbose_name='Date Performed')
+    date = models.DateField(verbose_name='Date Performed')
     zip = models.CharField(verbose_name='Zip Code', max_length=5)
     date_end = models.DateField(verbose_name='Date Ended')
     contact = models.CharField(verbose_name='Contact', max_length=100)
