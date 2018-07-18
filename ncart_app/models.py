@@ -13,7 +13,7 @@ class Project(models.Model):
     state = models.CharField(verbose_name='State', max_length=30)
     date = models.DateField(verbose_name='Date Performed')
     zip = models.CharField(verbose_name='Zip Code', max_length=5)
-    date_end = models.DateField(verbose_name='Date Ended')
+    date_end = models.DateField(verbose_name='Date Ended',null=True, default=None, blank=True)
     contact = models.CharField(verbose_name='Contact', max_length=100)
     email = models.EmailField(verbose_name='Email',null=True, default=None)
 
