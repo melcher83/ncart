@@ -22,7 +22,7 @@ class Project(models.Model):
 
 
 class Firewall(models.Model):
-    name = models.CharField(verbose_name='Firewall Name', max_length=100)
+    name = models.CharField(verbose_name='Firewall/Router/Switch Name', max_length=100)
     make = models.CharField(verbose_name='Brand',max_length=30)
     model = models.CharField(verbose_name='Model', max_length=30)
     description = models.CharField(verbose_name='Description', max_length=500, null=True, default=None, blank=True)
