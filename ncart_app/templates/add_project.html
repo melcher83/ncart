@@ -6,7 +6,7 @@
  Add Project
 {% endblock %}
 {% block h2 %}
-  <form method="post" action="{% url "add_project" %}" >
+  <form method="post" action="{% url "add-project" %}" >
     {% csrf_token %}
     <table>
       {{ form.as_table }}
