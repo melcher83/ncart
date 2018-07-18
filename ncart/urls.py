@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 import users.views.create_admin
 import ncart_app.views.index
+import ncart_app.views.add_project
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
