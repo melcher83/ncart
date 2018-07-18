@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url (r'^add-user$', users.views.create_admin.page),
     url (r'^add-user$',users.views.create_admin.page, name='create_user'),
-    url (r'^index$', ncart_app.views.index.page, name='index')
+    url (r'^index$', ncart_app.views.index.page, name='index'),
+    url (r'^add-project$', ncart_app.views.add_project.page, name='add-project'),
+    url (r'^add-project$', users.views.add_project.page),
 
 ]
