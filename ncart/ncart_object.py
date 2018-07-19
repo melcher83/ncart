@@ -13,7 +13,7 @@ class ncart_firewall:
     def __init__(self,x):
         self.firewall=Firewall.objects.get(id=x)
     def get_ports(self):
-        self.list = Port.objects.filter(Firewall=self.Firewall.id).values_list('id', flat=True)
+        self.list = Port.objects.filter(Firewall=self.firewall.id).values_list('id', flat=True)
         return self.list
 
 
