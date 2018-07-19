@@ -15,6 +15,9 @@ class ncart_firewall:
     def get_ports(self):
         self.list = Port.objects.filter(Firewall=self.firewall.id).values_list('id', flat=True)
         return self.list
+    def get_pics(self):
+        self.list = Picture.objects.filter(Firewall=self.firewall.id).values_list('id', flat=True)
+        return self.list
 
 
 class ncart_project:
@@ -25,9 +28,7 @@ class ncart_project:
         self.list = Firewall.objects.filter(Project=self.proj.id).values_list('id', flat=True)
         return self.list
 
-    def get_pics(self):
-        self.list = Picture.objects.filter(Project=self.proj.id).values_list('id', flat=True)
-        return self.list
+
 
     def get_maps(self):
         self.list = Network_map.objects.filter(Project=self.proj.id).values_list('id', flat=True)
