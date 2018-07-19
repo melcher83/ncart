@@ -2,7 +2,7 @@ from ncart_app.models import Project
 from ncart_app.models import Firewall
 from ncart_app.models import Port
 from ncart_app.models import Picture
-from ncart_app.models import Network
+from ncart_app.models import Network_map
 
 def get_all_projects():
     return Project.objects.all()
@@ -24,6 +24,15 @@ class ncart_project:
     def get_firewalls(self):
         self.list = Firewall.objects.filter(Project=self.proj.id).values_list('id', flat=True)
         return self.list
+
+    def get_pics(self):
+        self.list = Picture.objects.filter(Project=self.proj.id).values_list('id', flat=True)
+        return self.list
+
+    def get_maps(self):
+        self.list = Network_map.objects.filter(Project=self.proj.id).values_list('id', flat=True)
+        return self.list
+
     def get_project(self):
         return self.proj
     def get_projid(self):
