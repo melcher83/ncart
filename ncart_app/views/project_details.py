@@ -19,7 +19,7 @@ def page(request,pk):
       # This line is used to redirect to the specified URL. We use the reverse() function to get the URL from its name defines urls.py.
     else:
 
-      return render(request, 'en/public/project_details.html', {'form' : form})
+      return render(request, 'project_details.html', {'form' : form})
   else:
 
     form1 = Project.objects.get(id=pk)
@@ -28,7 +28,7 @@ def page(request,pk):
 
 
 
-    return render(request, 'en/public/project_details.html', {'form': form, 'pk': pk})
+    return render(request, 'project_details.html', {'form': form, 'pk': pk})
 class Form_project(forms.ModelForm):
 
 
