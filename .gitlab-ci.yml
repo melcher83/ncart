@@ -16,7 +16,7 @@ IDK:
     url:
 
   script:
-    - rm -rf /ncart_app/migrations/*
+    #- rm -rf /ncart_app/migrations/*
     - docker-compose build --no-cache && docker-compose up -d
 
 
