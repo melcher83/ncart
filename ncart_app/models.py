@@ -7,7 +7,7 @@ from django.db import models
 
 
 class Project(models.Model):
-    Title = models.CharField(verbose_name='Title', max_length=30,null=True, default=None, blank=True)
+    #Title = models.CharField(verbose_name='Title', max_length=30,null=True, default=None, blank=True)
     client = models.CharField(verbose_name='Client', max_length=30)
     streetaddress = models.CharField(verbose_name='Street Address', max_length=300)
     city = models.CharField(verbose_name='City', max_length=30)
@@ -19,7 +19,7 @@ class Project(models.Model):
     email = models.EmailField(verbose_name='Email',null=True, default=None)
 
     def __unicode__(self):
-        return self.Title
+        return self.client
 
 
 class Firewall(models.Model):
