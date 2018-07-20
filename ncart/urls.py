@@ -18,6 +18,7 @@ from django.contrib import admin
 import users.views.create_admin
 import ncart_app.views.index
 import ncart_app.views.add_project
+import ncart_app.views.project_details
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
