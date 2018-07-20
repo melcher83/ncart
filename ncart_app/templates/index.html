@@ -6,6 +6,29 @@
   Projects list
 {% endblock %}
 {% block h2 %}
-<a href="add-project">New Project</a>
+  <h3>{{ action }}</h3>
+  {% if all_projects|length > 0 %}
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Client</td>
+          <td>Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+    {% for project in all_projects %}
+      <tr>
+          <td><a href="project-details-{{ project.id }}">{{ project.id }}</a></td>
+        <td>{{ project.Client }}</td>
 
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+      <a href="add-project">New Project</a>
+  {% else %}
+  <a href="add-project">New Project</a>
+
+  {% endif %}
 {% endblock %}

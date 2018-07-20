@@ -26,6 +26,7 @@ urlpatterns = [
     url (r'^index$', ncart_app.views.index.page, name='index'),
     url (r'^add-project$', ncart_app.views.add_project.page, name='add-project'),
     url (r'^add-project$', ncart_app.views.add_project.page),
-    url (r'^$', ncart_app.views.index.page)
+    url (r'^$', ncart_app.views.index.page),
+    url(r'^project-details-(?P<pk>\d+)$',ncart_app.views.project_details.page, name="project_details")
 
 ]

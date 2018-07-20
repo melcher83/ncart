@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title_html %}
+  Project Details
+{% endblock %}
+{% block h1 %}
+  Project Details
+{% endblock %}
+{% block h2 %}
+  <form method="post" action="{% url "project_details" pk %}" >
+    {% csrf_token %}
+    <table>
+   {{ form.as_table }}
+
+    <!-- This line displays lines of the form.-->
+    </table>
+    <p><input type="submit" value="Update" /></p>
+   
+
+  </form>
+{% endblock %}
