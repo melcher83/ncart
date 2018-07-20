@@ -7,7 +7,7 @@ from django.db import models
 
 
 class Project(models.Model):
-    Title =  = models.CharField(verbose_name='Title', max_length=30)
+    Title =  = models.CharField(verbose_name='Title', max_length=30,null=True, default=None, blank=True)
     client = models.CharField(verbose_name='Client', max_length=30)
     streetaddress = models.CharField(verbose_name='Street Address', max_length=300)
     city = models.CharField(verbose_name='City', max_length=30)
