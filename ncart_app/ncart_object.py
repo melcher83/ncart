@@ -8,6 +8,12 @@ def get_all_projects():
     return Project.objects.all()
 
 
+
+def get_all_firewalls():
+    return Firewalls.objects.all()
+
+
+
 class ncart_firewall:
     # initialize the object
     def __init__(self,x):

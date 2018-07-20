@@ -33,7 +33,8 @@ class Firewall(models.Model):
         return self.name
 
 class Port(models.Model):
-    number = models.CharField(verbose_name='Port Number', max_length=100)
+    number_high = models.CharField(verbose_name='Port Number High', max_length=100)
+    number_low = models.CharField(verbose_name='Port Number Low', max_length=100)
     transport = models.CharField(verbose_name='TCP/UDP', max_length=4)
     source = models.CharField(verbose_name='Source', max_length=12)
     destination = models.CharField(verbose_name='Destination', max_length=12)
@@ -41,7 +42,7 @@ class Port(models.Model):
     firewall = models.ForeignKey(Project, verbose_name="Firewall", null=True, default=None, blank=True)
 
     def __unicode__(self):
-        return self.number
+        return self.number_high
 
 class Picture(models.Model):
     title = models.CharField(verbose_name='Title', max_length=50)
