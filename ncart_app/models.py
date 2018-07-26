@@ -26,24 +26,13 @@ class Firewall(models.Model):
     name = models.CharField(verbose_name='Firewall/Router/Switch Name', max_length=100)
     make = models.CharField(verbose_name='Brand',max_length=30)
     model = models.CharField(verbose_name='Model', max_length=30)
-    description = models.CharField(verbose_name='Description', max_length=500, null=True, default=None, blank=True)
+    description = models.CharField(verbose_name='Description', max_length=10000, null=True, default=None, blank=True)
     project = models.ForeignKey(Project, verbose_name="Project", null=True, default=None, blank=True)
 
 
     def __unicode__(self):
         return self.name
 
-class Port(models.Model):
-    number_high = models.CharField(verbose_name='Port Number High', max_length=100)
-    number_low = models.CharField(verbose_name='Port Number Low', max_length=100)
-    transport = models.CharField(verbose_name='TCP/UDP', max_length=4)
-    source = models.CharField(verbose_name='Source', max_length=12)
-    destination = models.CharField(verbose_name='Destination', max_length=12)
-    description = models.CharField(verbose_name='Description', max_length=500)
-    firewall = models.ForeignKey(Project, verbose_name="Firewall", null=True, default=None, blank=True)
-
-    def __unicode__(self):
-        return self.number_high
 
 class Picture(models.Model):
     title = models.CharField(verbose_name='Title', max_length=50)
