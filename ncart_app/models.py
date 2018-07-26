@@ -38,6 +38,7 @@ class Picture(models.Model):
     title = models.CharField(verbose_name='Title', max_length=50)
     file = models.FileField()
     firewall = models.ForeignKey(Project, verbose_name="Firewall", null=True, default=None, blank=True)
+    caption = models.ForeignKey(Project, verbose_name="Caption", null=True, default=None, blank=True)
 
     def __unicode__(self):
         return self.title
@@ -47,6 +48,7 @@ class Network_map(models.Model):
     type = models.CharField(verbose_name='Type', max_length=20)
     file = models.FileField()
     project = models.ForeignKey(Project, verbose_name="Project", null=True, default=None, blank=True)
+    caption = models.ForeignKey(Project, verbose_name="Caption", null=True, default=None, blank=True)
 
     def __unicode__(self):
         return self.title
