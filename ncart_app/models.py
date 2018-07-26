@@ -33,9 +33,29 @@ class Firewall(models.Model):
     def __unicode__(self):
         return self.name
 
+class Firewall(models.Model):
+    name = models.CharField(verbose_name='Firewall/Router/Switch Name', max_length=100)
+    make = models.CharField(verbose_name='Brand',max_length=30)
+    model = models.CharField(verbose_name='Model', max_length=30)
+    description = models.CharField(verbose_name='Description', max_length=10000, null=True, default=None, blank=True)
+
+
+
+    def __unicode__(self):
+        return self.name
+
 
 class Picture(models.Model):
-    title = models.CharField(verbose_name='Title', max_length=50)
+    title = models.CharField(verbose_class Firewall(models.Model):
+    name = models.CharField(verbose_name='Firewall/Router/Switch Name', max_length=100)
+    make = models.CharField(verbose_name='Brand',max_length=30)
+    model = models.CharField(verbose_name='Model', max_length=30)
+    description = models.CharField(verbose_name='Description', max_length=10000, null=True, default=None, blank=True)
+    project = models.ForeignKey(Project, verbose_name="Project", null=True, default=None, blank=True)
+
+
+    def __unicode__(self):
+        return self.namename='Title', max_length=50)
     file = models.FileField()
     firewall = models.ForeignKey(Project, verbose_name="Firewall", null=True, default=None, blank=True)
     caption = models.ForeignKey(Project, verbose_name="Caption", null=True, default=None, blank=True)
